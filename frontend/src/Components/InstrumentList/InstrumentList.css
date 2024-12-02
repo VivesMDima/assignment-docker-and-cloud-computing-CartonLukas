@@ -1,0 +1,45 @@
+
+.add-instrument-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;  
+  }
+  
+ 
+  .add-instrument-button {
+    background-color: #61dafb; 
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .add-instrument-button:hover {
+    background-color: #21a1f1; 
+    transform: scale(1.05); 
+  }
+  
+  .add-instrument-button:active {
+    transform: scale(0.98);
+  }
+  
+ 
+  .instrument-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .instrument-item {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+  }
+  
+  
