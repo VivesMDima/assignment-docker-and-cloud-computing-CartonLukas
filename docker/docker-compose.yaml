@@ -1,0 +1,28 @@
+services:
+  frontend:
+    build:
+      context: ../frontend  # locatie van de frontend
+    ports:
+      - "80:80"  # Poort 80 open zetten zodat je kan verbinden met de frontend
+    depends_on:
+      - backend  # Frontend pas opstarten na de backend
+
+  backend:
+    build:
+      context: ../backend  # locatie van de backend
+    ports:
+      - "3001:3001"  # Poort 3001 open zetten zodat je kan verbinden met de backend
+    environment:
+      - MONGO_URI=mongodb://db:27017/instrumentsdb  # env variable zetten voor de connectie met de database in de backend
+    depends_on:
+      - db  # backend pas opstarten na de database
+
+  db:
+    image: mongo  # De img voor een mongo database binnenhalen
+    ports:
+      - "27017:27017"  # De poort 27017 openen zetten zo dat je kan verbinden 
+    volumes:
+      - mongo-data:/data/db  # Data opslaan ook na stoppen van de container
+
+volumes:
+  mongo-data:  # data opslaen ook na stoppen van de container 
